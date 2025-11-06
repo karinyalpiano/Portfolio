@@ -333,12 +333,10 @@ $ curl -s https://api.github.com/users/karinyalpiano | jq '.public_repos, .follo
   </footer>
 
   <script>
-    // Snapshot original PT content to avoid losing edits
     const i18nNodes = Array.from(document.querySelectorAll("[data-i18n]"));
     i18nNodes.forEach(el => { el.dataset.i18nOriginal = el.innerHTML; });
 
     const translations = {
-      // Only EN overrides; PT restores originals
       en: {
         "nav-about": "About",
         "nav-skills": "Skills",
@@ -378,12 +376,11 @@ $ curl -s https://api.github.com/users/karinyalpiano | jq '.public_repos, .follo
           const val = translations.en[key];
           if (typeof val === "string") el.innerHTML = val;
         });
-      } else { // restore PT originals from markup
+      } else { 
         i18nNodes.forEach(el => {
           if (el.dataset.i18nOriginal !== undefined) el.innerHTML = el.dataset.i18nOriginal;
         });
       }
-      // Meta descriptions
       const md = document.querySelector('meta[name="description"]');
       if (md) md.setAttribute("content", lang === "en" ? metaDesc.en : metaDesc.pt);
       const ogd = document.querySelector('meta[property="og:description"]');
