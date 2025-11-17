@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kariny Alpiano • Portfólio</title>
+  <meta name="description" content="Portfólio de Kariny Alpiano — Desenvolvedora Python, Django, JavaScript e React." />
+  <meta property="og:title" content="Kariny Alpiano • Portfólio" />
+  <meta property="og:description" content="Projetos em Python/Flask/Django, React e mais." />
+  <meta property="og:image" content="https://github.com/karinyalpiano.png" />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230b1220'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='52' fill='%23a7f3d0' font-family='ui-monospace,Menlo,monospace'%3EK%3C/text%3E%3C/svg%3E">
+  <!-- Tailwind config BEFORE CDN to enable class-based dark mode -->
+  <script> window.tailwind = { config:{ darkMode:'class' } }; window.tailwind.config = { darkMode:'class' }; </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --grid:rgba(99,102,241,.12); --bg:#0b1220; --text:#e2e8f0; --muted:#94a3b8; --card:rgba(255,255,255,.05); --ring:rgba(255,255,255,.08); --accent:#34d399; }
+    html:not(.dark){ --bg:#fff; --text:#0f172a; --muted:#334155; --card:#fff; --ring:rgba(15,23,42,.08); --accent:#0ea5e9; }
+    body{ background:var(--bg)!important; color:var(--text)!important; }
+    body::before{ content:""; position:fixed; inset:0; z-index:-2; background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/24px 24px; pointer-events:none; }
+    body::after{ content:""; position:fixed; inset:-30% -30% -10% -30%; z-index:-3; background:radial-gradient(60% 40% at 30% 10%,rgba(56,189,248,.15),transparent 60%),radial-gradient(45% 35% at 80% 0%,rgba(167,243,208,.12),transparent 60%),radial-gradient(50% 30% at 70% 90%,rgba(99,102,241,.15),transparent 60%); filter:blur(32px); pointer-events:none; }
+    .panel{ background:var(--card); border:1px solid var(--ring); }
+    .ring-soft{ box-shadow: inset 0 0 0 1px var(--ring); }
+    .accent{ color:var(--accent); }
+    .btn{ border:1px solid var(--ring); background:transparent; }
+    .btn:hover{ background:rgba(255,255,255,.06); }
+    .terminal{ background:#0d1629; border:1px solid rgba(148,163,184,.15); box-shadow:0 10px 30px rgba(2,6,23,.35), inset 0 1px 0 rgba(255,255,255,.04); }
+    html:not(.dark) .terminal{ background:#f8fafc; border-color:rgba(15,23,42,.12); box-shadow:0 10px 30px rgba(2,6,23,.1), inset 0 1px 0 rgba(255,255,255,.4); }
+    .terminal .chrome{ display:grid; grid-template-columns:1fr auto; align-items:center; padding:.5rem .75rem; border-bottom:1px solid rgba(148,163,184,.12); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)); }
+    html:not(.dark) .terminal .chrome{ border-bottom-color:rgba(15,23,42,.08); background:linear-gradient(180deg, rgba(15,23,42,.03), rgba(15,23,42,0)); }
+    .dot{ width:.75rem; height:.75rem; border-radius:9999px; }
+    .caret::after{ content:"▍"; display:inline-block; margin-left:.1rem; animation:blink 1s steps(1) infinite; color:var(--accent); }
+    @keyframes blink{ 50%{ opacity:0; } }
+    .tag{ font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; }
+    header{ backdrop-filter: blur(8px); background: rgba(255,255,255,.04); border-bottom:1px solid var(--ring); }
+    html:not(.dark) header{ background: rgba(255,255,255,.7); }
+    a{ color:inherit; }
+
+    /* GCP badges + Certificados – carrossel horizontal */
+    .grid-cards{
+      display:flex;
+      gap:16px;
+      overflow-x:auto;
+      padding-bottom:8px;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      -webkit-overflow-scrolling:touch;
+    }
+    .grid-cards::-webkit-scrollbar{
+      height:6px;
+    }
+    .grid-cards::-webkit-scrollbar-thumb{
+      background:rgba(148,163,184,.6);
+      border-radius:999px;
+    }
+    .grid-cards::-webkit-scrollbar-track{
+      background:transparent;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 4px 14px rgba(0,0,0,.08);
+      flex:0 0 260px;
+      scroll-snap-align:start;
+    }
+    .card img{ width:100%; max-height:360px; object-fit:contain; background:#fff; padding:10px; display:block; }
+    .card .cap{ padding:10px 12px; font-size:14px; color:#374151; border-top:1px solid #f3f4f6; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .gcp-stripe{ height:4px; background:linear-gradient(90deg,#EA4335 0%,#EA4335 25%,#4285F4 25%,#4285F4 50%,#34A853 50%,#34A853 75%,#FBBC05 75%,#FBBC05 100%); }
+    .section-title{ margin:0 0 16px; font-size:28px; letter-spacing:.4px; }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-emerald-300 selection:text-slate-900">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="https://github.com/karinyalpiano.png" alt="Kariny Alpiano" class="w-9 h-9 rounded-full ring-1" style="box-shadow: inset 0 0 0 1px var(--ring)" />
+        <span class="font-semibold tag">&lt;KarinyAlpiano /&gt;</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm" style="color: var(--muted)">
+        <a href="#sobre" class="hover:accent" data-i18n="nav-about">Sobre</a>
+        <a href="#skills" class="hover:accent" data-i18n="nav-skills">Skills</a>
+        <a href="#gcp-badges" class="hover:accent">Badges GCP</a>
+        <a href="#certificados" class="hover:accent">Certificados</a>
+        <a href="#projetos" class="hover:accent" data-i18n="nav-projects">Projetos</a>
+        <a href="#contato" class="hover:accent" data-i18n="nav-contact">Contato</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="https://github.com/karinyalpiano" target="_blank" rel="noreferrer" class="text-sm px-3 py-1.5 rounded-lg btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/kariny-alpiano" target="_blank" rel="noreferrer" class="hidden sm:inline-block text-sm px-3 py-1.5 rounded-lg btn">LinkedIn</a>
+        <select id="lang" class="text-xs px-2 py-1.5 rounded-lg btn">
+          <option value="pt">PT-BR</option>
+          <option value="en">EN</option>
+        </select>
+        <button id="theme" class="text-xs px-2 py-1.5 rounded-lg btn" aria-label="Tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative">
+    <div class="max-w-6xl mx-auto px-5 pb-10 pt-12 sm:pt-16 md:pt-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs mb-4 panel">
+          <span class="caret" data-i18n="status-available">Disponível para oportunidades</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight"><span class="accent">&lt;</span>Kariny Alpiano<span class="accent">/&gt;</span></h1>
+        <p class="mt-3 text-lg tag" style="color: var(--muted)" data-i18n="hero-headline">Desenvolvedora • Python • Django • JavaScript • React</p>
+        <p class="mt-2" style="color: var(--muted)" data-i18n="hero-tagline">Viciada em aprender novas linguagens e frameworks.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="mailto:karinyalpiano@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold" style="background: var(--accent); color: #0b1220" data-i18n="cta-contact">Fale comigo</a>
+          <a href="https://github.com/karinyalpiano" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium btn" data-i18n="cta-github">Ver GitHub</a>
+        </div>
+      </div>
+      <!-- Terminal preview -->
+      <div class="terminal rounded-2xl overflow-hidden">
+        <div class="chrome">
+          <div class="flex items-center gap-2">
+            <span class="dot" style="background:#ef4444"></span>
+            <span class="dot" style="background:#f59e0b"></span>
+            <span class="dot" style="background:#34d399"></span>
+          </div>
+          <span class="text-[11px] tag" style="color: var(--muted)">~/projects/kariny-portfolio<span class="accent"> — bash</span></span>
+        </div>
+<pre class="p-4 text-[13px] leading-6 overflow-auto" style="color:#a7f3d0"><code>// stack.ts
+export const stack = [
+  "Python","Django","Flask","JavaScript","React","TypeScript","Vue","NestJS",
+  "Node.js","MongoDB","GCP","Power BI","PySpark","C++","BigQuery","Apache Beam"
+];
+
+// hello.tsx
+function Hello() {
+  return &lt;h1&gt;Olá, mundo!&lt;/h1&gt;;
+}
+
+// curl status
+$ curl -s https://api.github.com/users/karinyalpiano | jq '.public_repos, .followers'
+&lt;~ code, café e curiosidade ~&gt;
+</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="py-14">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Sobre mim / About&gt;</span></h2>
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="panel rounded-2xl p-6 lg:col-span-2">
+          <p data-i18n="about-long" style="color: var(--muted)">
+            Meu nome é Kariny, sou de Alagoas e atualmente trabalho como Analista de Sistemas na Prestek Telecom,
+            uma empresa especializada em provedores de internet. Minha trajetória em tecnologia começou em 2022,
+            quando participei de um Bootcamp intensivo de Engenharia de Dados (3 meses). Depois, me aprofundei em
+            desenvolvimento de software — minha verdadeira paixão.
+          </p>
+        </div>
+        <div class="panel rounded-2xl p-6 flex items-center gap-4">
+          <img src="https://github.com/karinyalpiano.png" alt="Kariny Alpiano" class="w-20 h-20 rounded-full ring-soft" />
+          <div>
+            <p class="tag" style="color: var(--muted)">Alagoas • BR</p>
+            <p class="tag" style="color: var(--muted)">Prestek Telecom • Analista de Sistemas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK & TOOLS -->
+  <section id="skills" class="py-14">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Stack &amp; Tools /&gt;</span></h2>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+        <!-- Python -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2c5.5 0 5 4 5 4v2H9a3 3 0 0 0-3 3v3H7c0 0 0-2 2-2h8a3 3 0 0 0 3-3V6c0-3-2-4-6-4h-2z" fill="#3776AB"/>
+            <circle cx="10" cy="5" r="1" fill="#fff"/>
+            <path d="M12 22c-5.5 0-5-4-5-4v-2h8a3 3 0 0 0 3-3v-3h1s0 2-2 2H9a3 3 0 0 0-3 3v2c0 3 2 4 6 4h2z" fill="#FFD43B"/>
+            <circle cx="14" cy="19" r="1" fill="#0b1220"/>
+          </svg>
+          <span class="tag">Python</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#F7DF1E" aria-hidden="true"><rect width="24" height="24" rx="4"/><text x="6" y="17" font-size="12" font-family="ui-monospace,Menlo" fill="#111">JS</text></svg>
+          <span class="tag">JavaScript</span>
+        </div>
+
+        <!-- TypeScript -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#3178C6"/><text x="4.5" y="17" font-size="12" font-family="ui-monospace,Menlo" fill="#fff">TS</text></svg>
+          <span class="tag">TypeScript</span>
+        </div>
+
+        <!-- React -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="-11 -11 22 22" fill="none" aria-hidden="true"><circle r="2" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1"><ellipse rx="10" ry="4"/><ellipse rx="10" ry="4" transform="rotate(60)"/><ellipse rx="10" ry="4" transform="rotate(120)"/></g></svg>
+          <span class="tag">React</span>
+        </div>
+
+        <!-- Vue -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h6l3 5 3-5h6L12 20z" fill="#41B883"/><path d="M6 4h3l3 5 3-5h3L12 16z" fill="#34495E"/></svg>
+          <span class="tag">Vue</span>
+        </div>
+
+        <!-- Node.js -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" fill="#3C873A"/><text x="7" y="16" font-size="9" font-family="ui-monospace,Menlo" fill="#fff">node</text></svg>
+          <span class="tag">Node.js</span>
+        </div>
+
+        <!-- NestJS -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-2.9-1.4-5.5-3.6-7.2.5 1 .7 2 .7 3.1a7 7 0 1 1-7 7c0-2.8 1.6-5.2 4-6.4C14.2 5.6 13.2 4.2 12 3z" fill="#E0234E"/></svg>
+          <span class="tag">NestJS</span>
+        </div>
+
+        <!-- MongoDB -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2s6 5 6 11-6 9-6 9-6-3-6-9S12 2 12 2z" fill="#4DB33D"/><path d="M12 4v16" stroke="#2E7D32" stroke-width="1.5"/></svg>
+          <span class="tag">MongoDB</span>
+        </div>
+
+        <!-- GCP -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 8l9-5 9 5-3 2-6-3-6 3-3-2z" fill="#EA4335"/><path d="M12 6v14l-3-2V11l-3 1V8l6-2zm0 0l6 2v4l-3-1v7l-3 2V6z" fill="#4285F4"/>
+          </svg>
+          <span class="tag">GCP</span>
+        </div>
+
+        <!-- Power BI -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="3" height="14" rx="1" fill="#F2C811"/><rect x="8" y="9" width="3" height="10" rx="1" fill="#F2C811"/><rect x="13" y="7" width="3" height="12" rx="1" fill="#F2C811"/><rect x="18" y="11" width="3" height="8" rx="1" fill="#F2C811"/></svg>
+          <span class="tag">Power BI</span>
+        </div>
+
+        <!-- Django -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#092E20"/><text x="6" y="17" font-size="12" font-family="ui-monospace,Menlo" fill="#fff">dj</text></svg>
+          <span class="tag">Django</span>
+        </div>
+
+        <!-- Flask -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3s8 8 9 13-3 5-7 4S3 15 4 11 8 3 8 3z" fill="#000"/></svg>
+          <span class="tag">Flask</span>
+        </div>
+
+        <!-- TensorFlow -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-5 9 5-3 2-6-3-6 3-3-2z" fill="#FF6F00"/><path d="M12 6v14l-3-2V11l-3 1V8l6-2zm0 0l6 2v4l-3-1v7l-3 2V6z" fill="#FFA000"/></svg>
+          <span class="tag">TensorFlow</span>
+        </div>
+
+        <!-- Gradio -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="3" fill="#7C3AED"/><path d="M8 9h8a3 3 0 1 1 0 6H8" stroke="#7C3AED" stroke-width="2" fill="none"/></svg>
+          <span class="tag">Gradio</span>
+        </div>
+
+        <!-- SQLite -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="#0EA5E9"/><path d="M7 7h10M7 10h10M7 13h10M7 16h6" stroke="#fff" stroke-width="1.5"/></svg>
+          <span class="tag">SQLite</span>
+        </div>
+
+        <!-- PySpark -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18l3-9 6 2 5-6" stroke="#F97316" stroke-width="2" fill="none"/><circle cx="19" cy="5" r="2" fill="#F97316"/></svg>
+          <span class="tag">PySpark</span>
+        </div>
+
+        <!-- C++ -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l10 6v8l-10 6-10-6V8z" fill="#00599C"/><text x="7" y="16" font-size="10" font-family="ui-monospace,Menlo" fill="#fff">C++</text></svg>
+          <span class="tag">C++</span>
+        </div>
+
+        <!-- BigQuery -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="#4285F4"/><rect x="14" y="14" width="7" height="2" rx="1" transform="rotate(45 14 14)" fill="#4285F4"/></svg>
+          <span class="tag">BigQuery</span>
+        </div>
+
+        <!-- Apache Beam -->
+        <div class="panel rounded-xl p-4 flex items-center gap-3">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#F97316"/><rect x="6" y="8" width="12" height="8" rx="2" fill="#fff"/></svg>
+          <span class="tag">Apache Beam</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BADGES GCP (seção própria) -->
+  <section id="gcp-badges" class="py-14">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="section-title"><span class="accent">&lt;Badges GCP /&gt;</span></h2>
+      <div class="grid-cards">
+        <article class="card">
+          <div class="gcp-stripe"></div>
+          <a href="../assets/certificados/CERTIFICADO GCP 1_52e70105.jpeg" target="_blank" rel="noopener">
+            <img loading="lazy" src="../assets/certificados/CERTIFICADO GCP 1_52e70105.jpeg" alt="Set Up and Configure a Cloud Environment in Google Cloud — 09 Feb 2023">
+          </a>
+          <div class="cap"><strong>Set Up and Configure a Cloud Environment in Google Cloud</strong><br><span style="color:#6b7280">Skill Badge • 09 Feb 2023</span></div>
+        </article>
+
+        <article class="card">
+          <div class="gcp-stripe"></div>
+          <a href="../assets/certificados/CERTIFICADO GCP 2_f73ce858.jpeg" target="_blank" rel="noopener">
+            <img loading="lazy" src="../assets/certificados/CERTIFICADO GCP 2_f73ce858.jpeg" alt="Perform Foundational Infrastructure Tasks in Google Cloud — 06 Feb 2023">
+          </a>
+          <div class="cap"><strong>Perform Foundational Infrastructure Tasks in Google Cloud</strong><br><span style="color:#6b7280">Skill Badge • 06 Feb 2023</span></div>
+        </article>
+
+        <article class="card">
+          <div class="gcp-stripe"></div>
+          <a href="../assets/certificados/CERTIFICADO GCP 3_bdcd5dc0.jpeg" target="_blank" rel="noopener">
+            <img loading="lazy" src="../assets/certificados/CERTIFICADO GCP 3_bdcd5dc0.jpeg" alt="Create and Manage Cloud Resources — 19 Nov 2022">
+          </a>
+          <div class="cap"><strong>Create and Manage Cloud Resources</strong><br><span style="color:#6b7280">Skill Badge • 19 Nov 2022</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICADOS (abaixo de Stack & Tools, GCP já separado) -->
+  <section id="certificados" class="py-14">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="section-title"><span class="accent">&lt;Certificados /&gt;</span></h2>
+      <div class="grid-cards">
+        <article class="card"><a href="../assets/certificados/ADVANCED TESTER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/ADVANCED TESTER_p1.png" alt="Advanced Tester"></a><div class="cap">Advanced Tester</div></article>
+        <article class="card"><a href="../assets/certificados/BACKEND DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/BACKEND DEVELOPER_p1.png" alt="Backend Developer"></a><div class="cap">Backend Developer</div></article>
+        <article class="card"><a href="../assets/certificados/BASIC FRONTEND_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/BASIC FRONTEND_p1.png" alt="Basic Frontend"></a><div class="cap">Basic Frontend</div></article>
+        <article class="card"><a href="../assets/certificados/DEVOPS STRATEGIST_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/DEVOPS STRATEGIST_p1.png" alt="DevOps Strategist"></a><div class="cap">DevOps Strategist</div></article>
+        <article class="card"><a href="../assets/certificados/FRONTEND DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/FRONTEND DEVELOPER_p1.png" alt="Frontend Developer"></a><div class="cap">Frontend Developer</div></article>
+        <article class="card"><a href="../assets/certificados/FULL CYCLE DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/FULL CYCLE DEVELOPER_p1.png" alt="Full Cycle Developer"></a><div class="cap">Full Cycle Developer</div></article>
+        <article class="card"><a href="../assets/certificados/FULL STACK DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/FULL STACK DEVELOPER_p1.png" alt="Full Stack Developer"></a><div class="cap">Full Stack Developer</div></article>
+        <article class="card"><a href="../assets/certificados/OBJECT-ORIENTED DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/OBJECT-ORIENTED DEVELOPER_p1.png" alt="Object-Oriented Developer"></a><div class="cap">Object-Oriented Developer</div></article>
+        <article class="card"><a href="../assets/certificados/SMART MANAGER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="../assets/certificados/SMART MANAGER_p1.png" alt="Smart Manager"></a><div class="cap">Smart Manager</div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos" class="py-14">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Projects /&gt;</span></h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="https://github.com/karinyalpiano/sistema-de-CPE-" target="_blank" rel="noreferrer" class="group block h-full">
+          <div class="h-full rounded-2xl panel p-5 flex flex-col hover:translate-y-[-2px]" style="transition: transform .2s ease">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-10 h-10 rounded-lg ring-soft grid place-content-center text-xs tag" style="background: rgba(52,211,153,.15); color: var(--accent)">CPE</div>
+              <h3 class="font-semibold text-lg leading-tight group-hover:accent" data-i18n="cpe-title">Inventário de CPEs (Flask)</h3>
+            </div>
+            <p class="text-sm mb-4 flex-1" style="color: var(--muted)" data-i18n="cpe-desc">Aplicação web em Flask para inventário e monitoramento de CPEs de clientes ISP, com autenticação, dashboards e exportação CSV.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">Python</span>
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">Flask</span>
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">SQLite</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/karinyalpiano/e-commerce" target="_blank" rel="noreferrer" class="group block h-full">
+          <div class="h-full rounded-2xl panel p-5 flex flex-col hover:translate-y-[-2px]" style="transition: transform .2s ease">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-10 h-10 rounded-lg ring-soft grid place-content-center text-xs tag" style="background: rgba(52,211,153,.15); color: var(--accent)">Shop</div>
+              <h3 class="font-semibold text-lg leading-tight group-hover:accent" data-i18n="ecom-title">E-commerce (React + Vite)</h3>
+            </div>
+            <p class="text-sm mb-4 flex-1" style="color: var(--muted)" data-i18n="ecom-desc">Loja virtual demo consumindo Fake Store API, com catálogo, filtros, carrinho, wishlist e checkout simulado.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">React</span>
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">Vite</span>
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">Router v6</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/karinyalpiano/rede-neural" target="_blank" rel="noreferrer" class="group block h-full">
+          <div class="h-full rounded-2xl panel p-5 flex flex-col hover:translate-y-[-2px]" style="transition: transform .2s ease">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-10 h-10 rounded-lg ring-soft grid place-content-center text-xs tag" style="background: rgba(52,211,153,.15); color: var(--accent)">AI</div>
+              <h3 class="font-semibold text-lg leading-tight group-hover:accent" data-i18n="mnist-title">Rede Neural MNIST (TensorFlow + Gradio)</h3>
+            </div>
+            <p class="text-sm mb-4 flex-1" style="color: var(--muted)" data-i18n="mnist-desc">Reconhecedor de dígitos manuscritos; treina modelo e disponibiliza demo web com Gradio.</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">Python</span>
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">TensorFlow/Keras</span>
+              <span class="tag rounded-md ring-soft px-2 py-1 text-[11px]">Gradio</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="py-14">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Contact /&gt;</span></h2>
+      <div class="rounded-2xl panel p-6 text-center">
+        <p data-i18n="contact-text" style="color: var(--muted)">Prefere e-mail? Manda um alô:</p>
+        <a href="mailto:karinyalpiano@gmail.com" class="inline-block mt-3 font-semibold text-sm px-4 py-2 rounded-lg btn">karinyalpiano@gmail.com</a>
+        <div class="mt-4 flex items-center justify-center gap-3">
+          <a href="https://github.com/karinyalpiano" target="_blank" rel="noreferrer" class="hover:accent">GitHub</a>
+          <span style="color: var(--muted)">•</span>
+          <a href="https://www.linkedin.com/in/kariny-alpiano" target="_blank" rel="noreferrer" class="hover:accent">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-xs" style="color: var(--muted)">
+    <p><span data-i18n="footer">© <span id='year'></span> Kariny Alpiano. Feito com ❤️ e café.</span></p>
+  </footer>
+
+  <script>
+    const i18nNodes = Array.from(document.querySelectorAll("[data-i18n]"));
+    i18nNodes.forEach(el => { el.dataset.i18nOriginal = el.innerHTML; });
+
+    const translations = {
+      en: {
+        "nav-about": "About", "nav-skills": "Skills", "nav-projects": "Projects", "nav-contact": "Contact",
+        "status-available": "Available for opportunities",
+        "hero-headline": "Developer • Python • Django • JavaScript • React",
+        "hero-tagline": "Addicted to learning new languages and frameworks.",
+        "cta-contact": "Contact me", "cta-github": "View GitHub",
+        "about-long": "My name is Kariny, from Alagoas (Brazil). I currently work as a Systems Analyst at Prestek Telecom (an ISP). I entered this field in 2022 after a 3-month intensive Data Engineering bootcamp; later I immersed myself in software development, where I truly found my path. My hobbies are playing PC games, listening to music, and playing instruments. I love Python and JavaScript.",
+        "cpe-title": "CPE Inventory (Flask)", "cpe-desc": "Flask web app for inventory and monitoring of customers' CPEs, with authentication, dashboards, and CSV export.",
+        "ecom-title": "E-commerce (React + Vite)", "ecom-desc": "Demo storefront using Fake Store API, with catalog, filters, cart, wishlist, and simulated checkout.",
+        "mnist-title": "Neural Network MNIST (TensorFlow + Gradio)", "mnist-desc": "Handwritten digits recognizer; trains a model and offers a web demo with Gradio.",
+        "contact-text": "Prefer email? Say hi:", "footer": "© <span id='year'></span> Kariny Alpiano. Made with ❤️ and coffee."
+      }
+    };
+
+    const metaDesc = {
+      en: "Portfolio of Kariny Alpiano — Developer (Python, Django, JavaScript, React).",
+      pt: "Portfólio de Kariny Alpiano — Desenvolvedora Python, Django, JavaScript e React."
+    };
+    const ogDesc = {
+      en: "Projects in Python/Flask/Django, React and more.",
+      pt: "Projetos em Python/Flask/Django, React e mais."
+    };
+
+    function applyLang(lang) {
+      document.documentElement.lang = (lang === "en") ? "en" : "pt-BR";
+      if (lang === "en") {
+        i18nNodes.forEach(el => {
+          const key = el.getAttribute("data-i18n");
+          const val = translations.en[key];
+          if (typeof val === "string") el.innerHTML = val;
+        });
+      } else {
+        i18nNodes.forEach(el => {
+          if (el.dataset.i18nOriginal !== undefined) el.innerHTML = el.dataset.i18nOriginal;
+        });
+      }
+      const md = document.querySelector('meta[name="description"]');
+      if (md) md.setAttribute("content", lang === "en" ? metaDesc.en : metaDesc.pt);
+      const ogd = document.querySelector('meta[property="og:description"]');
+      if (ogd) ogd.setAttribute("content", lang === "en" ? ogDesc.en : ogDesc.pt);
+
+      localStorage.setItem("lang", lang);
+      const select = document.getElementById("lang");
+      if (select && select.value !== lang) select.value = lang;
+    }
+
+    function applyTheme(theme) {
+      if (theme === "light") document.documentElement.classList.remove("dark");
+      else document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", theme);
+      const btn = document.getElementById("theme");
+      if (btn) btn.textContent = theme === "light" ? "☀️" : "🌙";
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === "light" ? "#ffffff" : "#0b1220");
+    }
+
+    // Init
+    const storedLang = localStorage.getItem("lang");
+    const initialLang = storedLang ? storedLang : (((navigator.language || "").toLowerCase().startsWith("pt")) ? "pt" : "en");
+    applyLang(initialLang);
+    document.getElementById("lang").addEventListener("change", (e) => applyLang(e.target.value));
+
+    const storedTheme = localStorage.getItem("theme");
+    const initialTheme = storedTheme ? storedTheme : "dark";
+    applyTheme(initialTheme);
+    document.getElementById("theme").addEventListener("click", () => {
+      applyTheme(document.documentElement.classList.contains("dark") ? "light" : "dark");
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
