@@ -1,6 +1,5 @@
 # Meu portfólio ✨
 
-<<<<<<< HEAD
 Oi! Eu sou a **Kariny** — alagoana, Analista de Sistemas na **Prestek Telecom** e curiosa por tudo que envolve código.  
 Este repositório guarda meu **portfólio**: um site **estático** (apenas `index.html`) para rodar em qualquer lugar e publicar no **GitHub Pages** sem build.
 
@@ -145,4 +144,4 @@ Se você curtir a estrutura, pode **forkar, adaptar e chamar de sua**. Se usar c
 
 **Kariny**  
 *código, café e curiosidade.*
->>>>>>> 0ee73a3aef8c4c65fe9789088ae77ee2bf74bb39
+
