@@ -10,7 +10,7 @@
   <meta property="og:image" content="https://github.com/karinyalpiano.png" />
   <meta name="theme-color" content="#0b1220" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230b1220'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='52' fill='%23a7f3d0' font-family='ui-monospace,Menlo,monospace'%3EK%3C/text%3E%3C/svg%3E">
-  <!-- Tailwind config BEFORE CDN to enable class-based dark mode -->
+
   <script> window.tailwind = { config:{ darkMode:'class' } }; window.tailwind.config = { darkMode:'class' }; </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -36,7 +36,6 @@
     html:not(.dark) header{ background: rgba(255,255,255,.7); }
     a{ color:inherit; }
 
-    /* GCP badges + Certificados – carrossel horizontal */
     .grid-cards{
       display:flex;
       gap:16px;
@@ -101,7 +100,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="top" class="relative">
     <div class="max-w-6xl mx-auto px-5 pb-10 pt-12 sm:pt-16 md:pt-24 grid md:grid-cols-2 gap-10 items-center">
       <div>
@@ -116,7 +114,7 @@
           <a href="https://github.com/karinyalpiano" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium btn" data-i18n="cta-github">Ver GitHub</a>
         </div>
       </div>
-      <!-- Terminal preview -->
+
       <div class="terminal rounded-2xl overflow-hidden">
         <div class="chrome">
           <div class="flex items-center gap-2">
@@ -145,7 +143,6 @@ $ curl -s https://api.github.com/users/karinyalpiano | jq '.public_repos, .follo
     </div>
   </section>
 
-  <!-- SOBRE -->
   <section id="sobre" class="py-14">
     <div class="max-w-5xl mx-auto px-5">
       <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Sobre mim / About&gt;</span></h2>
@@ -333,7 +330,6 @@ $ curl -s https://api.github.com/users/karinyalpiano | jq '.public_repos, .follo
     </div>
   </section>
 
-  <!-- CERTIFICADOS (abaixo de Stack & Tools, GCP já separado) -->
   <section id="certificados" class="py-14">
     <div class="max-w-5xl mx-auto px-5">
       <h2 class="section-title"><span class="accent">&lt;Certificados /&gt;</span></h2>
