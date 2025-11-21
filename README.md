@@ -49,4 +49,3 @@ MIT — use, modifique, brinque à vontade.
 
 — Kariny  
 *Código, café e curiosidade.*  
-Gerado em 2025-11-06 15:08 UTC.

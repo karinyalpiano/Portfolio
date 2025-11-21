@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kariny Alpiano • Portfólio</title>
-  <meta name="description" content="Portfólio de Kariny Alpiano — Desenvolvedora Python, Django, JavaScript e React." />
+  <meta name="description" content="Portfólio de Kariny Alpiano — Engenheira de Software (Python, Django, JavaScript e React)." />
   <meta property="og:title" content="Kariny Alpiano • Portfólio" />
-  <meta property="og:description" content="Projetos em Python/Flask/Django, React e mais." />
+  <meta property="og:description" content="Projetos em sistemas, automação de processos, Python/Django, JavaScript/React e dados." />
   <meta property="og:image" content="https://github.com/karinyalpiano.png" />
   <meta name="theme-color" content="#0b1220" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230b1220'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='52' fill='%23a7f3d0' font-family='ui-monospace,Menlo,monospace'%3EK%3C/text%3E%3C/svg%3E">
@@ -69,17 +69,228 @@
     .card .cap{ padding:10px 12px; font-size:14px; color:#374151; border-top:1px solid #f3f4f6; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .gcp-stripe{ height:4px; background:linear-gradient(90deg,#EA4335 0%,#EA4335 25%,#4285F4 25%,#4285F4 50%,#34A853 50%,#34A853 75%,#FBBC05 75%,#FBBC05 100%); }
     .section-title{ margin:0 0 16px; font-size:28px; letter-spacing:.4px; }
-  </style>
+  
+    /* Avatar dev-style */
+    .nav-brand { transition: transform .18s ease-out; }
+    .nav-brand:hover { transform: translateY(-1px); }
+
+    .avatar-shell {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-glow {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 999px;
+      padding: 2px;
+      background: conic-gradient(
+        from 160deg,
+        var(--accent),
+        #38bdf8,
+        #6366f1,
+        var(--accent)
+      );
+      box-shadow: 0 0 24px rgba(56, 189, 248, .35);
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      object-fit: cover;
+      background: #020617;
+      box-shadow: inset 0 0 0 1px var(--ring);
+    }
+
+    .avatar-pill {
+      position: absolute;
+      bottom: -4px;
+      right: -6px;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #0b1220;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, .8);
+    }
+
+    /* Animação suave nas seções */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-block {
+      animation: fade-up .7s ease-out both;
+    }
+
+    .fade-grid > * {
+      animation: fade-up .7s ease-out both;
+    }
+
+    .fade-grid > *:nth-child(2) {
+      animation-delay: .12s;
+    }
+
+    /* Hover mais bonito nos cards de certificados/badges */
+    .card {
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(52, 211, 153, .9);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, .65);
+    }
+
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      border-radius: 999px;
+      padding: 0.6rem 1.6rem;
+      border: none;
+      background:
+        radial-gradient(circle at 0 0, rgba(56,189,248,.72), transparent 55%),
+        linear-gradient(90deg, var(--accent), #22d3ee);
+      color: #0b1220;
+      font-weight: 600;
+      letter-spacing: .02em;
+      box-shadow: 0 18px 38px rgba(15,23,42,.85);
+      transition: transform .18s ease-out, box-shadow .18s ease-out, filter .18s ease-out;
+      white-space: nowrap;
+    }
+    .btn-primary::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, rgba(255,255,255,.28), transparent 55%);
+      opacity:0;
+      transition:opacity .18s ease-out;
+    }
+    .btn-primary:hover{
+      transform: translateY(-2px) scale(1.015);
+      filter:brightness(1.05);
+      box-shadow:0 22px 55px rgba(15,23,42,.95);
+    }
+    .btn-primary:hover::after{
+      opacity:1;
+    }
+
+    .btn-ghost{
+      border-radius:999px;
+      padding:0.55rem 1.35rem;
+      backdrop-filter: blur(10px);
+      background:rgba(15,23,42,.7);
+      border:1px solid rgba(148,163,184,.7);
+      transition:background .18s ease-out, transform .18s ease-out, border-color .18s ease-out, box-shadow .18s ease-out;
+    }
+    html:not(.dark) .btn-ghost{
+      background:rgba(248,250,252,.9);
+      border-color:rgba(148,163,184,.8);
+    }
+    .btn-ghost:hover{
+      transform:translateY(-1px);
+      background:rgba(15,23,42,.9);
+      border-color:var(--accent);
+      box-shadow:0 14px 30px rgba(15,23,42,.7);
+    }
+    html:not(.dark) .btn-ghost:hover{
+      background:#e0f2fe;
+      box-shadow:0 12px 26px rgba(148,163,184,.7);
+    }
+
+    .to-top{
+      position:fixed;
+      right:1.5rem;
+      bottom:1.5rem;
+      width:2.5rem;
+      height:2.5rem;
+      border-radius:999px;
+      border:1px solid var(--ring);
+      background:
+        radial-gradient(circle at 30% 0%, rgba(52,211,153,.4), transparent 55%),
+        rgba(15,23,42,.96);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.1rem;
+      box-shadow:0 20px 45px rgba(15,23,42,.9);
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(8px);
+      transition:opacity .18s ease-out, transform .18s ease-out, box-shadow .18s ease-out, background .18s ease-out;
+      z-index:50;
+    }
+    .to-top.visible{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+    .to-top:hover{
+      box-shadow:0 24px 60px rgba(15,23,42,1);
+      background:
+        radial-gradient(circle at 30% 0%, rgba(52,211,153,.6), transparent 55%),
+        rgba(15,23,42,1);
+    }
+
+    /* Fundo remodelado - glow mais suave e dev-like */
+    html.dark body{
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,.16), transparent 55%),
+        radial-gradient(circle at top right, rgba(129,140,248,.16), transparent 55%),
+        radial-gradient(circle at bottom, rgba(52,211,153,.14), transparent 55%),
+        #020617;
+    }
+    html.dark body::before,
+    html.dark body::after{
+      content:none;
+    }
+
+    .cert-card{
+      position:relative;
+      overflow:hidden;
+    }
+    .cert-card::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:radial-gradient(circle at 0 0, rgba(52,211,153,.18), transparent 55%);
+      opacity:0;
+      transition:opacity .25s ease-out;
+      pointer-events:none;
+    }
+    .cert-card:hover::before{
+      opacity:1;
+    }
+</style>
 </head>
 <body class="min-h-screen selection:bg-emerald-300 selection:text-slate-900">
 
   <!-- NAV -->
   <header class="sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-3">
-        <img src="https://github.com/karinyalpiano.png" alt="Kariny Alpiano" class="w-9 h-9 rounded-full ring-1" style="box-shadow: inset 0 0 0 1px var(--ring)" />
-        <span class="font-semibold tag">&lt;KarinyAlpiano /&gt;</span>
-      </a>
+      <a href="#top" class="flex items-center gap-3 nav-brand">
+      <div class="avatar-shell">
+        <div class="avatar-glow">
+          <img
+            src="https://github.com/karinyalpiano.png"
+            alt="Kariny Alpiano"
+            class="avatar-img"
+          />
+        </div>
+        <span class="avatar-pill tag">&lt;dev/&gt;</span>
+      </div>
+      <span class="font-semibold tag">&lt;KarinyAlpiano /&gt;</span>
+    </a>
       <nav class="hidden sm:flex items-center gap-6 text-sm" style="color: var(--muted)">
         <a href="#sobre" class="hover:accent" data-i18n="nav-about">Sobre</a>
         <a href="#skills" class="hover:accent" data-i18n="nav-skills">Skills</a>
@@ -89,7 +300,9 @@
         <a href="#contato" class="hover:accent" data-i18n="nav-contact">Contato</a>
       </nav>
       <div class="flex items-center gap-2">
-        <a href="https://github.com/karinyalpiano" target="_blank" rel="noreferrer" class="text-sm px-3 py-1.5 rounded-lg btn">GitHub</a>
+        <a href="https://github.com/karinyalpiano" target="_blank" rel="noreferrer" class="text-sm font-medium btn-ghost" data-i18n="cta-github">
+            Ver GitHub
+          </a>
         <a href="https://www.linkedin.com/in/kariny-alpiano" target="_blank" rel="noreferrer" class="hidden sm:inline-block text-sm px-3 py-1.5 rounded-lg btn">LinkedIn</a>
         <select id="lang" class="text-xs px-2 py-1.5 rounded-lg btn">
           <option value="pt">PT-BR</option>
@@ -100,21 +313,24 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section id="top" class="relative">
-    <div class="max-w-6xl mx-auto px-5 pb-10 pt-12 sm:pt-16 md:pt-24 grid md:grid-cols-2 gap-10 items-center">
+    <div class="max-w-6xl mx-auto px-5 pb-10 pt-12 sm:pt-16 md:pt-24 grid md:grid-cols-2 gap-10 items-center fade-grid">
       <div>
         <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs mb-4 panel">
           <span class="caret" data-i18n="status-available">Disponível para oportunidades</span>
         </div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight"><span class="accent">&lt;</span>Kariny Alpiano<span class="accent">/&gt;</span></h1>
-        <p class="mt-3 text-lg tag" style="color: var(--muted)" data-i18n="hero-headline">Desenvolvedora • Python • Django • JavaScript • React</p>
-        <p class="mt-2" style="color: var(--muted)" data-i18n="hero-tagline">Viciada em aprender novas linguagens e frameworks.</p>
+        <p class="mt-3 text-lg tag" style="color: var(--muted)" data-i18n="hero-headline">Engenheira de Software • Python • Django • JavaScript • React</p>
+        <p class="mt-2" style="color: var(--muted)" data-i18n="hero-tagline">Experiência em análise de sistemas, automação de processos e integração de soluções de TI, com foco em eficiência, resultados e inovação.</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="mailto:karinyalpiano@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold" style="background: var(--accent); color: #0b1220" data-i18n="cta-contact">Fale comigo</a>
+          <a href="https://wa.me/5582988729008?text=Ol%C3%A1%20Kariny%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20%F0%9F%91%8B" class="inline-flex items-center gap-2 text-sm btn-primary" data-i18n="cta-contact" target="_blank" rel="noreferrer">
+            <span>Fale comigo no WhatsApp</span>
+          </a>
           <a href="https://github.com/karinyalpiano" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium btn" data-i18n="cta-github">Ver GitHub</a>
         </div>
       </div>
-
+      <!-- Terminal preview -->
       <div class="terminal rounded-2xl overflow-hidden">
         <div class="chrome">
           <div class="flex items-center gap-2">
@@ -126,8 +342,9 @@
         </div>
 <pre class="p-4 text-[13px] leading-6 overflow-auto" style="color:#a7f3d0"><code>// stack.ts
 export const stack = [
-  "Python","Django","Flask","JavaScript","React","TypeScript","Vue","NestJS",
-  "Node.js","MongoDB","GCP","Power BI","PySpark","C++","BigQuery","Apache Beam"
+  "Python","Django","JavaScript","TypeScript","React","Next.js","Node.js","NestJS",
+  "MySQL","PostgreSQL","MongoDB","BigQuery","Pandas","PySpark","GCP","Apache Beam",
+  "Power BI","Git","GitHub","Kanban"
 ];
 
 // hello.tsx
@@ -143,31 +360,54 @@ $ curl -s https://api.github.com/users/karinyalpiano | jq '.public_repos, .follo
     </div>
   </section>
 
-  <section id="sobre" class="py-14">
-    <div class="max-w-5xl mx-auto px-5">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Sobre mim / About&gt;</span></h2>
-      <div class="grid lg:grid-cols-3 gap-6">
-        <div class="panel rounded-2xl p-6 lg:col-span-2">
-          <p data-i18n="about-long" style="color: var(--muted)">
-            Meu nome é Kariny, sou de Alagoas e atualmente trabalho como Analista de Sistemas na Prestek Telecom,
-            uma empresa especializada em provedores de internet. Minha trajetória em tecnologia começou em 2022,
-            quando participei de um Bootcamp intensivo de Engenharia de Dados (3 meses). Depois, me aprofundei em
-            desenvolvimento de software — minha verdadeira paixão.
-          </p>
-        </div>
-        <div class="panel rounded-2xl p-6 flex items-center gap-4">
-          <img src="https://github.com/karinyalpiano.png" alt="Kariny Alpiano" class="w-20 h-20 rounded-full ring-soft" />
-          <div>
-            <p class="tag" style="color: var(--muted)">Alagoas • BR</p>
-            <p class="tag" style="color: var(--muted)">Prestek Telecom • Analista de Sistemas</p>
-          </div>
+  <!-- SOBRE -->
+  <section id="sobre" class="py-14 section-block">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Sobre mim / About&gt;</span></h2>
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="panel rounded-2xl p-6 lg:col-span-2">
+        <p data-i18n="about-long" style="color: var(--muted)">
+          Sou Engenheira de Software em Maceió (AL), com experiência em análise de sistemas, automação de processos
+          e desenvolvimento com Python, Django e JavaScript. Atuo na otimização de resultados, integração de sistemas
+          e liderança de projetos de TI, sempre buscando eficiência, escalabilidade e inovação. Minha trajetória começou
+          em um bootcamp intensivo de Engenharia de Dados e evoluiu para o desenvolvimento de software, onde concentro
+          meus estudos e projetos hoje.
+        </p>
+      </div>
+      <div class="panel rounded-2xl p-6 flex items-center gap-4">
+        <img src="https://github.com/karinyalpiano.png" alt="Kariny Alpiano" class="w-20 h-20 rounded-full ring-soft" />
+        <div>
+          <p class="tag" style="color: var(--muted)">Alagoas • BR</p>
+          <p class="tag" style="color: var(--muted)">Prestek Telecom • Analista de Sistemas</p>
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <!-- Idiomas -->
+      <div class="panel rounded-2xl p-6">
+        <h3 class="text-sm font-semibold mb-3 tracking-wide tag" data-i18n="about-languages-title">Idiomas</h3>
+        <ul class="text-sm space-y-1.5" style="color: var(--muted)" data-i18n="about-languages-list">
+          <li>• Português — nativo</li>
+          <li>• Inglês — intermediário (leitura técnica e comunicação em projetos)</li>
+          <li>• Espanhol — básico/intermediário</li>
+        </ul>
+      </div>
+
+      <!-- Formação -->
+      <div class="panel rounded-2xl p-6">
+        <h3 class="text-sm font-semibold mb-3 tracking-wide tag" data-i18n="about-education-title">Formação</h3>
+        <ul class="text-sm space-y-1.5" style="color: var(--muted)" data-i18n="about-education-list">
+          <li>• Análise e Desenvolvimento de Sistemas (Tecnólogo) — Descomplica</li>
+          <li>• Engenharia de Dados — SoulCode Academy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- STACK & TOOLS -->
-  <section id="skills" class="py-14">
+  <section id="skills" class="py-14 section-block">
     <div class="max-w-5xl mx-auto px-5">
       <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Stack &amp; Tools /&gt;</span></h2>
 
@@ -299,80 +539,334 @@ $ curl -s https://api.github.com/users/karinyalpiano | jq '.public_repos, .follo
   </section>
 
   <!-- BADGES GCP (seção própria) -->
-  <section id="gcp-badges" class="py-14">
+
+  <section id="gcp-badges" class="py-14 section-block">
     <div class="max-w-5xl mx-auto px-5">
-      <h2 class="section-title"><span class="accent">&lt;Badges GCP /&gt;</span></h2>
-      <div class="grid-cards">
-        <article class="card">
-          <div class="gcp-stripe"></div>
-          <a href="assets/certificados/
-CERTIFICADO GCP 1_52e70105.jpeg" target="_blank" rel="noopener">
-            <img loading="lazy" src="assets/certificados/
-CERTIFICADO GCP 1_52e70105.jpeg" alt="Set Up and Configure a Cloud Environment in Google Cloud — 09 Feb 2023">
+      <div class="rounded-2xl panel p-6 md:p-7 relative overflow-hidden">
+        <div style="position:absolute; inset:-40%; opacity:.12; background:radial-gradient(circle at 0 0,#22d3ee,transparent 55%),radial-gradient(circle at 100% 0,#6366f1,transparent 55%); pointer-events:none;"></div>
+        <div class="relative z-10 grid gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.3fr)] items-center">
+          <div>
+            <h2 class="section-title mb-3">
+              <span class="accent">&lt;Badges GCP /&gt;</span>
+            </h2>
+            <p class="text-sm md:text-base mb-4" style="color: var(--muted)">
+              Skill badges conquistadas em laboratórios práticos da Google Cloud,
+              com foco em infraestrutura, provisioning e recursos em nuvem.
+            </p>
+            <ul class="text-xs md:text-sm space-y-1.5" style="color: var(--muted)">
+              <li>• <strong>Set Up and Configure</strong> um ambiente em cloud.</li>
+              <li>• <strong>Perform Foundational Tasks</strong> com recursos GCP.</li>
+              <li>• <strong>Create and Manage Cloud Resources</strong> em produção.</li>
+            </ul>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-3">
+            <article class="panel rounded-xl p-3 flex flex-col justify-between ring-soft">
+              <div class="gcp-stripe rounded-md mb-2"></div>
+              <a href="assets/certificados/CERTIFICADO GCP 1_52e70105.jpeg" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/certificados/CERTIFICADO GCP 1_52e70105.jpeg" alt="Set Up and Configure a Cloud Environment in Google Cloud — 09 Feb 2023" class="w-full h-24 object-contain bg-white/95 rounded-md mb-2" />
+              </a>
+              <p class="text-[11px]" style="color: var(--muted)">
+                <strong>Set Up and Configure a Cloud Environment</strong><br />
+                <span style="color:#6b7280">Skill Badge • 09 Feb 2023</span>
+              </p>
+            </article>
+
+            <article class="panel rounded-xl p-3 flex flex-col justify-between ring-soft">
+              <div class="gcp-stripe rounded-md mb-2"></div>
+              <a href="assets/certificados/CERTIFICADO GCP 2_f73ce858.jpeg" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/certificados/CERTIFICADO GCP 2_f73ce858.jpeg" alt="Perform Foundational Infrastructure Tasks in Google Cloud — 06 Feb 2023" class="w-full h-24 object-contain bg-white/95 rounded-md mb-2" />
+              </a>
+              <p class="text-[11px]" style="color: var(--muted)">
+                <strong>Perform Foundational Infrastructure Tasks</strong><br />
+                <span style="color:#6b7280">Skill Badge • 06 Feb 2023</span>
+              </p>
+            </article>
+
+            <article class="panel rounded-xl p-3 flex flex-col justify-between ring-soft">
+              <div class="gcp-stripe rounded-md mb-2"></div>
+              <a href="assets/certificados/CERTIFICADO GCP 3_bdcd5dc0.jpeg" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/certificados/CERTIFICADO GCP 3_bdcd5dc0.jpeg" alt="Create and Manage Cloud Resources — 19 Nov 2022" class="w-full h-24 object-contain bg-white/95 rounded-md mb-2" />
+              </a>
+              <p class="text-[11px]" style="color: var(--muted)">
+                <strong>Create and Manage Cloud Resources</strong><br />
+                <span style="color:#6b7280">Skill Badge • 19 Nov 2022</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="certificados" class="py-14 section-block">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="section-title">
+        <span class="accent">&lt;Certificados /&gt;</span>
+      </h2>
+      <p class="text-sm md:text-base mb-6" style="color: var(--muted)" data-i18n="cert-intro">
+        Alguns certificados que representam minha evolução em desenvolvimento,
+        arquitetura e boas práticas.
+      </p>
+
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Advanced Tester -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">Testes</span>
+          </div>
+          <a href="assets/certificados/ADVANCED TESTER_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/ADVANCED TESTER_p1.png"
+              alt="Advanced Tester"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
           </a>
-          <div class="cap"><strong>Set Up and Configure a Cloud Environment in Google Cloud</strong><br><span style="color:#6b7280">Skill Badge • 09 Feb 2023</span></div>
+          <h3 class="text-sm font-semibold">Advanced Tester</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            Foco em qualidade de software, cenários de teste e confiabilidade.
+          </p>
         </article>
 
-        <article class="card">
-          <div class="gcp-stripe"></div>
-          <a href="assets/certificados/
-CERTIFICADO GCP 2_f73ce858.jpeg" target="_blank" rel="noopener">
-            <img loading="lazy" src="assets/certificados/
-CERTIFICADO GCP 2_f73ce858.jpeg" alt="Perform Foundational Infrastructure Tasks in Google Cloud — 06 Feb 2023">
+        <!-- Backend Developer -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">Back-end</span>
+          </div>
+          <a href="assets/certificados/BACKEND DEVELOPER_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/BACKEND DEVELOPER_p1.png"
+              alt="Backend Developer"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
           </a>
-          <div class="cap"><strong>Perform Foundational Infrastructure Tasks in Google Cloud</strong><br><span style="color:#6b7280">Skill Badge • 06 Feb 2023</span></div>
+          <h3 class="text-sm font-semibold">Backend Developer</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            APIs, regras de negócio e organização de código no servidor.
+          </p>
         </article>
 
-        <article class="card">
-          <div class="gcp-stripe"></div>
-          <a href="assets/certificados/
-CERTIFICADO GCP 3_bdcd5dc0.jpeg" target="_blank" rel="noopener">
-            <img loading="lazy" src="assets/certificados/
-CERTIFICADO GCP 3_bdcd5dc0.jpeg" alt="Create and Manage Cloud Resources — 19 Nov 2022">
+        <!-- Basic Frontend -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">Front-end</span>
+          </div>
+          <a href="assets/certificados/BASIC FRONTEND_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/BASIC FRONTEND_p1.png"
+              alt="Basic Frontend"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
           </a>
-          <div class="cap"><strong>Create and Manage Cloud Resources</strong><br><span style="color:#6b7280">Skill Badge • 19 Nov 2022</span></div>
+          <h3 class="text-sm font-semibold">Basic Frontend</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            Fundamentos de HTML, CSS e JavaScript para interfaces web.
+          </p>
+        </article>
+
+        <!-- DevOps Strategist -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">DevOps</span>
+          </div>
+          <a href="assets/certificados/DEVOPS STRATEGIST_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/DEVOPS STRATEGIST_p1.png"
+              alt="DevOps Strategist"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="text-sm font-semibold">DevOps Strategist</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            Automação, integração contínua e cultura DevOps.
+          </p>
+        </article>
+
+        <!-- Frontend Developer -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">Front-end</span>
+          </div>
+          <a href="assets/certificados/FRONTEND DEVELOPER_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/FRONTEND DEVELOPER_p1.png"
+              alt="Frontend Developer"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="text-sm font-semibold">Frontend Developer</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            Interfaces modernas e componentização.
+          </p>
+        </article>
+
+        <!-- Full Cycle Developer -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">End-to-end</span>
+          </div>
+          <a href="assets/certificados/FULL CYCLE DEVELOPER_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/FULL CYCLE DEVELOPER_p1.png"
+              alt="Full Cycle Developer"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="text-sm font-semibold">Full Cycle Developer</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            Do planejamento ao deploy, ciclo completo da aplicação.
+          </p>
+        </article>
+
+        <!-- Full Stack Developer -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">Full stack</span>
+          </div>
+          <a href="assets/certificados/FULL STACK DEVELOPER_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/FULL STACK DEVELOPER_p1.png"
+              alt="Full Stack Developer"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="text-sm font-semibold">Full Stack Developer</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            Back-end e front-end trabalhando juntos.
+          </p>
+        </article>
+
+        <!-- Object-Oriented Developer -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">OOP</span>
+          </div>
+          <a href="assets/certificados/OBJECT-ORIENTED DEVELOPER_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/OBJECT-ORIENTED DEVELOPER_p1.png"
+              alt="Object-Oriented Developer"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="text-sm font-semibold">Object-Oriented Developer</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            Conceitos de orientação a objetos aplicados no dia a dia.
+          </p>
+        </article>
+
+        <!-- Smart Manager -->
+        <article class="panel rounded-xl p-4 flex flex-col justify-between cert-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center text-[10px] px-2 py-0.5 rounded-full"
+                  style="background: rgba(52,211,153,.08); color: var(--accent); border: 1px solid rgba(52,211,153,.5);">
+              Certificado
+            </span>
+            <span class="text-[11px] tag" style="color: var(--muted)">Gestão</span>
+          </div>
+          <a href="assets/certificados/SMART MANAGER_p1.png" target="_blank" rel="noopener">
+            <img
+              src="assets/certificados/SMART MANAGER_p1.png"
+              alt="Smart Manager"
+              class="w-full h-32 object-contain bg-white/90 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 mb-3"
+              loading="lazy"
+            />
+          </a>
+          <h3 class="text-sm font-semibold">Smart Manager</h3>
+          <p class="text-xs mt-1" style="color: var(--muted)">
+            Gestão, liderança e visão de produto.
+          </p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="certificados" class="py-14">
-    <div class="max-w-5xl mx-auto px-5">
-      <h2 class="section-title"><span class="accent">&lt;Certificados /&gt;</span></h2>
-      <div class="grid-cards">
-        <article class="card"><a href="assets/certificados/
-ADVANCED TESTER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-ADVANCED TESTER_p1.png" alt="Advanced Tester"></a><div class="cap">Advanced Tester</div></article>
-        <article class="card"><a href="assets/certificados/
-BACKEND DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-BACKEND DEVELOPER_p1.png" alt="Backend Developer"></a><div class="cap">Backend Developer</div></article>
-        <article class="card"><a href="assets/certificados/
-BASIC FRONTEND_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-BASIC FRONTEND_p1.png" alt="Basic Frontend"></a><div class="cap">Basic Frontend</div></article>
-        <article class="card"><a href="assets/certificados/
-DEVOPS STRATEGIST_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-DEVOPS STRATEGIST_p1.png" alt="DevOps Strategist"></a><div class="cap">DevOps Strategist</div></article>
-        <article class="card"><a href="assets/certificados/
-FRONTEND DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-FRONTEND DEVELOPER_p1.png" alt="Frontend Developer"></a><div class="cap">Frontend Developer</div></article>
-        <article class="card"><a href="assets/certificados/
-FULL CYCLE DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-FULL CYCLE DEVELOPER_p1.png" alt="Full Cycle Developer"></a><div class="cap">Full Cycle Developer</div></article>
-        <article class="card"><a href="assets/certificados/
-FULL STACK DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-FULL STACK DEVELOPER_p1.png" alt="Full Stack Developer"></a><div class="cap">Full Stack Developer</div></article>
-        <article class="card"><a href="assets/certificados/
-OBJECT-ORIENTED DEVELOPER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-OBJECT-ORIENTED DEVELOPER_p1.png" alt="Object-Oriented Developer"></a><div class="cap">Object-Oriented Developer</div></article>
-        <article class="card"><a href="assets/certificados/
-SMART MANAGER_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/certificados/
-SMART MANAGER_p1.png" alt="Smart Manager"></a><div class="cap">Smart Manager</div></article>
+<!-- EXPERIÊNCIA -->
+<section id="experiencia" class="py-14 section-block">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">
+      <span class="accent" data-i18n="exp-title">&lt;Experiência / Experience&gt;</span>
+    </h2>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Prestek -->
+      <div class="panel rounded-2xl p-6 h-full flex flex-col">
+        <div class="flex items-center justify-between gap-3 mb-2">
+          <h3 class="font-semibold text-lg" data-i18n="exp-prestek-role">Analista de Sistemas</h3>
+          <span class="tag" style="color: var(--muted)" data-i18n="exp-prestek-tag">Prestek • Atual</span>
+        </div>
+        <p class="text-sm mb-3" style="color: var(--muted)" data-i18n="exp-prestek-desc">
+          Atuação em análise de sistemas e automação de processos para o setor de provedores de internet.
+        </p>
+        <ul class="text-sm space-y-1.5" style="color: var(--muted)" data-i18n="exp-prestek-list">
+          <li>• Liderança de projeto para expandir a presença digital da empresa e fortalecer o relacionamento com clientes e stakeholders.</li>
+          <li>• Integração e otimização de processos corporativos, com foco na integração de sistemas e administração de ativos com INMAPS (IXC Soft).</li>
+          <li>• Desenvolvimento de relatórios avançados em Power BI para suporte à tomada de decisão.</li>
+          <li>• Criação de sistema de NPS utilizando Python (Django), integrado ao IXC para buscar informações e facilitar a filtragem de clientes.</li>
+        </ul>
+      </div>
+
+      <!-- ZT Consulting -->
+      <div class="panel rounded-2xl p-6 h-full flex flex-col">
+        <div class="flex items-center justify-between gap-3 mb-2">
+          <h3 class="font-semibold text-lg" data-i18n="exp-zt-role">Desenvolvedora Python</h3>
+          <span class="tag" style="color: var(--muted)">ZT Consulting</span>
+        </div>
+        <p class="text-sm mb-3" style="color: var(--muted)" data-i18n="exp-zt-desc">
+          Foco em otimização de bancos de dados e melhoria de performance de aplicações.
+        </p>
+        <ul class="text-sm space-y-1.5" style="color: var(--muted)" data-i18n="exp-zt-list">
+          <li>• Otimização de consultas SQL e reestruturação de bancos de dados, reduzindo em cerca de 25% o tempo de resposta das aplicações.</li>
+          <li>• Liderança na refatoração de código, resultando em aproximadamente 20% de ganho de performance.</li>
+          <li>• Atuação na gestão eficiente de dados e no controle de versões com Git e boas práticas de desenvolvimento.</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- PROJETOS -->
-  <section id="projetos" class="py-14">
+  <section id="projetos" class="py-14 section-block">
     <div class="max-w-6xl mx-auto px-5">
       <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Projects /&gt;</span></h2>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -425,13 +919,20 @@ SMART MANAGER_p1.png" alt="Smart Manager"></a><div class="cap">Smart Manager</di
   </section>
 
   <!-- CONTATO -->
-  <section id="contato" class="py-14">
+  <section id="contato" class="py-14 section-block">
     <div class="max-w-5xl mx-auto px-5">
       <h2 class="text-2xl md:text-3xl font-bold mb-6"><span class="accent">&lt;Contact /&gt;</span></h2>
       <div class="rounded-2xl panel p-6 text-center">
-        <p data-i18n="contact-text" style="color: var(--muted)">Prefere e-mail? Manda um alô:</p>
-        <a href="mailto:karinyalpiano@gmail.com" class="inline-block mt-3 font-semibold text-sm px-4 py-2 rounded-lg btn">karinyalpiano@gmail.com</a>
-        <div class="mt-4 flex items-center justify-center gap-3">
+        <p style="color: var(--muted)">Pode me chamar direto no WhatsApp ou por e-mail:</p>
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://wa.me/5582988729008?text=Ol%C3%A1%20Kariny%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20%F0%9F%91%8B" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-sm btn-primary">
+            <span>WhatsApp</span>
+          </a>
+          <a href="mailto:karinyalpiano@gmail.com" class="inline-flex items-center gap-2 text-sm btn-ghost">
+            <span>E-mail</span>
+          </a>
+        </div>
+        <div class="mt-6 flex items-center justify-center gap-3">
           <a href="https://github.com/karinyalpiano" target="_blank" rel="noreferrer" class="hover:accent">GitHub</a>
           <span style="color: var(--muted)">•</span>
           <a href="https://www.linkedin.com/in/kariny-alpiano" target="_blank" rel="noreferrer" class="hover:accent">LinkedIn</a>
@@ -444,33 +945,35 @@ SMART MANAGER_p1.png" alt="Smart Manager"></a><div class="cap">Smart Manager</di
     <p><span data-i18n="footer">© <span id='year'></span> Kariny Alpiano. Feito com ❤️ e café.</span></p>
   </footer>
 
-  <script>
+    <button id="toTop" class="to-top" aria-label="Voltar ao topo">↑</button>
+
+<script>
     const i18nNodes = Array.from(document.querySelectorAll("[data-i18n]"));
     i18nNodes.forEach(el => { el.dataset.i18nOriginal = el.innerHTML; });
 
     const translations = {
       en: {
-        "nav-about": "About", "nav-skills": "Skills", "nav-projects": "Projects", "nav-contact": "Contact",
+        "nav-about": "About", "nav-skills": "Skills", "nav-experience": "Experience", "nav-projects": "Projects", "nav-contact": "Contact",
         "status-available": "Available for opportunities",
-        "hero-headline": "Developer • Python • Django • JavaScript • React",
-        "hero-tagline": "Addicted to learning new languages and frameworks.",
+        "hero-headline": "Software Engineer • Python • Django • JavaScript • React",
+        "hero-tagline": "Experience in systems analysis, process automation and integration of IT solutions, with focus on efficiency, results and innovation.",
         "cta-contact": "Contact me", "cta-github": "View GitHub",
-        "about-long": "My name is Kariny, from Alagoas (Brazil). I currently work as a Systems Analyst at Prestek Telecom (an ISP). I entered this field in 2022 after a 3-month intensive Data Engineering bootcamp; later I immersed myself in software development, where I truly found my path. My hobbies are playing PC games, listening to music, and playing instruments. I love Python and JavaScript.",
+        "about-long": "I am a Software Engineer based in Maceió (Brazil), with experience in systems analysis, process automation and development with Python, Django and JavaScript. I focus on optimizing results, integrating systems and leading IT projects, always aiming for efficiency, scalability and innovation. My journey started in a Data Engineering bootcamp and evolved into software development, where I now concentrate my studies and projects.",
         "cpe-title": "CPE Inventory (Flask)", "cpe-desc": "Flask web app for inventory and monitoring of customers' CPEs, with authentication, dashboards, and CSV export.",
         "ecom-title": "E-commerce (React + Vite)", "ecom-desc": "Demo storefront using Fake Store API, with catalog, filters, cart, wishlist, and simulated checkout.",
         "mnist-title": "Neural Network MNIST (TensorFlow + Gradio)", "mnist-desc": "Handwritten digits recognizer; trains a model and offers a web demo with Gradio.",
-        "contact-text": "Prefer email? Say hi:", "footer": "© <span id='year'></span> Kariny Alpiano. Made with ❤️ and coffee."
+        "about-languages-title": "Languages", "about-languages-list": "<li>• Portuguese — native</li><li>• English — intermediate (technical reading and project communication)</li><li>• Spanish — basic/intermediate</li>", "about-education-title": "Education", "about-education-list": "<li>• Technologist in Systems Analysis and Development — Descomplica</li><li>• Data Engineering — SoulCode Academy</li>", "exp-title": "&lt;Experience /&gt;", "exp-prestek-role": "Systems Analyst", "exp-prestek-tag": "Prestek • Current", "exp-prestek-desc": "Works in systems analysis and process automation for the internet service provider sector.", "exp-prestek-list": "<li>• Leads projects to expand the company's digital presence and strengthen relationships with customers and stakeholders.</li><li>• Integrates and optimizes corporate processes, focusing on systems integration and asset management with INMAPS (IXC Soft).</li><li>• Develops advanced Power BI reports to support decision-making.</li><li>• Designs and maintains an NPS system with Python (Django), integrated with IXC to retrieve information and simplify customer filtering.</li>", "exp-zt-role": "Python Developer", "exp-zt-desc": "Focus on database optimization and improving application performance.", "exp-zt-list": "<li>• Optimizes SQL queries and restructures databases, reducing application response time by around 25%.</li><li>• Leads code refactoring, achieving approximately 20% performance gains.</li><li>• Works on efficient data management and version control using Git and development best practices.</li>", "cert-intro": "Some certificates that represent my evolution in development, architecture, and best practices.", "contact-text": "Prefer email? Say hi:", "footer": "© <span id='year'></span> Kariny Alpiano. Made with ❤️ and coffee."
       }
     };
 
     const metaDesc = {
-      en: "Portfolio of Kariny Alpiano — Developer (Python, Django, JavaScript, React).",
-      pt: "Portfólio de Kariny Alpiano — Desenvolvedora Python, Django, JavaScript e React."
-    };
+  en: "Portfolio of Kariny Alpiano — Software Engineer (Python, Django, JavaScript, React).",
+  pt: "Portfólio de Kariny Alpiano — Engenheira de Software (Python, Django, JavaScript e React)."
+};
     const ogDesc = {
-      en: "Projects in Python/Flask/Django, React and more.",
-      pt: "Projetos em Python/Flask/Django, React e mais."
-    };
+  en: "Projects in systems, process automation, and Python/Django, JavaScript/React and data.",
+  pt: "Projetos em sistemas, automação de processos e Python/Django, JavaScript/React e dados."
+};
 
     function applyLang(lang) {
       document.documentElement.lang = (lang === "en") ? "en" : "pt-BR";
@@ -518,7 +1021,23 @@ SMART MANAGER_p1.png" alt="Smart Manager"></a><div class="cap">Smart Manager</di
       applyTheme(document.documentElement.classList.contains("dark") ? "light" : "dark");
     });
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    const toTop = document.getElementById("toTop");
+    if (toTop) {
+      window.addEventListener("scroll", () => {
+        const y = window.scrollY || window.pageYOffset;
+        if (y > 320) {
+          toTop.classList.add("visible");
+        } else {
+          toTop.classList.remove("visible");
+        }
+      });
+      toTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
